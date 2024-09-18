@@ -1,12 +1,12 @@
 class ToDoList(object):
-    '''
+    """
     ToDoList - класс для внесения и сопровождения задач.\n
     Методы:\n
     add_task(task: string) - добавить задачу в лист исполнения\n
     complete_task(task: string) - отметить задачу как выполненную\n
     remove_task(task: string) - удалить задачу из листа исполнения\n
     list_tasks(task: string) - вывести список всех задач
-    '''
+    """
 
     def __init__(self):
         self.task_list = {}
@@ -58,6 +58,3 @@ task_list.remove_task('Task2')
 input()
 
 task_list.list_tasks()
-
-
-
