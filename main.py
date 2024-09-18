@@ -13,14 +13,14 @@ class ToDoList(object):
 
     def add_task(self, task):
         if task not in self.task_list.keys():
-            self.task_list[task] = 'Не выполнена'
+            self.task_list[task] = '\u267B'
             print(f'Задача "{task}" внесена в лист исполнения\n')
         else:
             print(f'Задача "{task}" уже существует\n')
 
     def complete_task(self, task):
         if task in self.task_list.keys():
-            self.task_list[task] = 'Выполнена'
+            self.task_list[task] = '\u2705 '
             print(f'Задача "{task}" отмечена как выполненная\n')
         else:
             print(f'Задача "{task}" не существует\n')
@@ -35,7 +35,7 @@ class ToDoList(object):
     def list_tasks(self):
         print('Список всех задач:\n')
         for task, status in self.task_list.items():
-            print(f'Задача "{task}"\n\tСтатус - "{status}"\n')
+            print(f'{status}\t"{task}"\n')
 
 
 task_list = ToDoList()
