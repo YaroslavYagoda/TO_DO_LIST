@@ -28,7 +28,7 @@ class ToDoList(object):
         else:
             print(f'Задача "{task}" не существует\n')
 
-    def list_tasks(self):
+    def get_list_tasks(self):
         """Вывести список всех задач"""
         print('Список всех задач:\n')
         for task, status in self.task_list.items():
@@ -43,7 +43,7 @@ task_list.add_task('Task3')
 task_list.add_task('Task1')
 input()
 
-task_list.list_tasks()
+task_list.get_list_tasks()
 input()
 
 task_list.complete_task('Task1')
@@ -54,4 +54,4 @@ task_list.remove_task('Task2')
 task_list.remove_task('Task2')
 input()
 
-task_list.list_tasks()
+task_list.get_list_tasks()
