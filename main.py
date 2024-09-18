@@ -1,31 +1,27 @@
 class ToDoList(object):
-    """
-    ToDoList - класс для внесения и сопровождения задач.\n
-    Методы:\n
-    add_task(task: string) - добавить задачу в лист исполнения\n
-    complete_task(task: string) - отметить задачу как выполненную\n
-    remove_task(task: string) - удалить задачу из листа исполнения\n
-    list_tasks(task: string) - вывести список всех задач
-    """
+    """Класс для внесения и сопровождения задач"""
 
     def __init__(self):
         self.task_list = {}
 
-    def add_task(self, task):
+    def add_task(self, task: str):
+        """Добавить задачу в лист исполнения"""
         if task not in self.task_list.keys():
             self.task_list[task] = '\u267B'
             print(f'Задача "{task}" внесена в лист исполнения\n')
         else:
             print(f'Задача "{task}" уже существует\n')
 
-    def complete_task(self, task):
+    def complete_task(self, task: str):
+        """Отметить задачу как выполненную"""
         if task in self.task_list.keys():
             self.task_list[task] = '\u2705 '
             print(f'Задача "{task}" отмечена как выполненная\n')
         else:
             print(f'Задача "{task}" не существует\n')
 
-    def remove_task(self, task):
+    def remove_task(self, task: str):
+        """Удалить задачу из листа исполнения"""
         if task in self.task_list.keys():
             del (self.task_list[task])
             print(f'Задача "{task}" удалена из списка\n')
@@ -33,6 +29,7 @@ class ToDoList(object):
             print(f'Задача "{task}" не существует\n')
 
     def list_tasks(self):
+        """Вывести список всех задач"""
         print('Список всех задач:\n')
         for task, status in self.task_list.items():
             print(f'{status}\t"{task}"\n')
