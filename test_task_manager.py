@@ -16,7 +16,8 @@ class TestProgram(TaskManager):
     performed = False
 
     def isfile(self):
-        assert os.path.exists(super().json_file_name), f'Файл {super().json_file_name} для импорта/экспорта не найден'
+        assert os.path.exists(super().json_file_name),\
+            f'Файл {super().json_file_name} для импорта/экспорта не найден'
 
     def is_json_data_in_file(self):
         try:

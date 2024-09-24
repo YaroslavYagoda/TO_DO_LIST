@@ -41,5 +41,5 @@ class ShellDef:
 
 
 if __name__ == '__main__':
-    shelldef_cls = ShellDef()
-    shelldef_cls.choice_management()
+    shell_def_cls = ShellDef()
+    shell_def_cls.choice_management()

@@ -8,13 +8,15 @@ class TaskManager(ShellDef):
 
     def __init__(self):
         self.__tasks_list = []
-        self.func_list = [self.get_tasks_list,
-                          self.add_task,
-                          self.complete_task,
-                          self.remove_task,
-                          self.load_from_json,
-                          self.save_to_json,
-                          self.exit_program]
+        self.func_list = [
+            self.get_tasks_list,
+            self.add_task,
+            self.complete_task,
+            self.remove_task,
+            self.load_from_json,
+            self.save_to_json,
+            self.exit_program
+        ]
         self.hello_string = q.terminal_hello_string
         self.query = q.start_terminal_query
         self.action = q.start_terminal_action
@@ -56,9 +58,11 @@ class TaskManager(ShellDef):
         self.clear_screen()
         print('Добавление новой задачи\n')
         description = self.input_task_name(description)
-        self.__tasks_list.append({"description": description,
-                                  "completed": False,
-                                  "icon": '\u267B'})
+        self.__tasks_list.append({
+            "description": description,
+            "completed": False,
+            "icon": '\u267B'
+        })
         print('\nЗадача  внесена в лист исполнения\n')
         self.input_continue()
 
@@ -68,9 +72,11 @@ class TaskManager(ShellDef):
         print('Снятие задачи с контроля(отметка о выполнении)\n')
         index = self.input_task_index(index)
         if 0 < index <= len(self.__tasks_list):
-            self.__tasks_list[index - 1] = {"description": self.__tasks_list[index - 1]["description"],
-                                            "completed": True,
-                                            "icon": '\u2705'}
+            self.__tasks_list[index - 1] = {
+                "description": self.__tasks_list[index - 1]["description"],
+                "completed": True,
+                "icon": '\u2705'
+            }
             print('\nЗадача отмечена как выполненная\n')
             self.input_continue()
         else:
